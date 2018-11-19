@@ -90,7 +90,8 @@ endif()
 
 add_library(gnuradio-fcd SHARED ${gr_fcd_sources})
 if (LINUX)
-  list(APPEND fcd_libs rt)
+  find_library(ICONV iconv)
+  list(APPEND fcd_libs rt ${ICONV})
 endif()
 target_link_libraries(gnuradio-fcd ${fcd_libs} ${LOG4CPP_LIBRARIES})
 
