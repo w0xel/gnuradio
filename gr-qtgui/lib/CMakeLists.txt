@@ -145,6 +145,7 @@ if(ENABLE_GR_CTRLPORT)
   ADD_DEFINITIONS(-DGR_CTRLPORT)
 endif(ENABLE_GR_CTRLPORT)
 
+find_library(UUID_LIBRARY uuid)
 ########################################################################
 # Setup library
 ########################################################################
@@ -156,6 +157,7 @@ list(APPEND qtgui_libs
     ${QWT_LIBRARIES}
     ${QT_LIBRARIES}
     ${FFTW3F_LIBRARIES}
+    ${UUID_LIBRARY}
 )
 if (WIN32)
   list(APPEND qtgui_libs
