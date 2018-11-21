@@ -28,6 +28,7 @@ include_directories(
   ${Boost_INCLUDE_DIRS}
 )
 
+find_library(UUID_LIBRARY uuid)
 list(APPEND QTGUI_LIBRARIES
   gnuradio-qtgui
   gnuradio-analog
@@ -35,6 +36,7 @@ list(APPEND QTGUI_LIBRARIES
   gnuradio-blocks
   gnuradio-fft
   gnuradio-runtime
+  ${UUID_LIBRARY}
 )
 
 QT4_WRAP_CPP(qtgui_moc_sources display_qt.h)
